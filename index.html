@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xinbeitou Artistic Loft | 新北投藝術閣樓</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f4d3f',
+                        steam: '#f0fafa',
+                        stone: '#44403c',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hide {
+            display: none !important;
+        }
+
+        /* Ken Burns Effect */
+        @keyframes ken-burns {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1) translate(-1%, -1%);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-ken-burns {
+            animation: ken-burns 30s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+
+<body class="bg-steam text-stone antialiased">
+
+    <!-- Dynamic Background with Ken Burns Effect -->
+    <div class="fixed inset-0 z-0 overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img src="images/gallery/IMG_9109.jpg" alt="Background" class="w-full h-full object-cover animate-ken-burns">
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10 h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+
+        <!-- Navbar -->
+        <nav
+            class="sticky top-0 w-full bg-black/60 backdrop-blur-md shadow-sm z-50 text-white border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">♨️</span>
+                        <span class="text-xl font-display font-semibold tracking-wide text-white">Xinbeitou Loft</span>
+                    </div>
+                    <button type="button" id="langToggleBtn"
+                        class="px-3 py-1 border border-white/20 rounded-full text-sm hover:bg-white/10 transition cursor-pointer">
+                        <span id="lang-btn-text">中文</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="min-h-screen flex items-center justify-center text-center px-4 snap-start">
+            <div class="max-w-4xl mx-auto text-white drop-shadow-lg">
+                <h1 class="text-5xl md:text-7xl font-display font-semibold mb-6 tracking-wide">
+                    <span class="lang-en">Xinbeitou Artistic Loft | <span
+                            class="text-3xl md:text-4xl block mt-2 opacity-90">Hot Spring Escape in Taipei</span></span>
+                    <span class="lang-zh hide">新北投藝術閣樓 | <span
+                            class="text-3xl md:text-4xl block mt-2 opacity-90">台北溫泉區奢華住宿</span></span>
+                </h1>
+                <p class="text-xl md:text-3xl font-light mb-10 text-white/90">
+                    <span class="lang-en">Escape to tranquility in Taiwan's most famous hot spring district</span>
+                    <span class="lang-zh hide">在台灣最著名的溫泉區享受寧靜時光</span>
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="#gallery"
+                        class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full hover:bg-white/20 transition">
+                        <span class="lang-en">View Photos</span>
+                        <span class="lang-zh hide">查看照片</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="min-h-screen py-20 flex items-center snap-start bg-black/30 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 w-full">
+                <h2 class="text-4xl font-bold text-center text-white mb-12 drop-shadow-md">
+                    <span class="lang-en">The Space</span>
+                    <span class="lang-zh hide">探索空間</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
+                        <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
+                        <img src="images/gallery/IMG_9107.jpg" alt="Interior" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
+                        <img src="images/gallery/IMG_9108.jpg" alt="Detail" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
+                        <img src="images/gallery/IMG_9110.jpg" alt="Sofa" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
+                        <img src="images/gallery/IMG_9111.jpg" alt="Kitchen" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
+                        <img src="images/gallery/timeline_20201119_131429.jpg" alt="View"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews / Testimonials -->
+        <section id="reviews"
+            class="min-h-screen py-20 flex items-center snap-start bg-black/50 backdrop-blur-md text-white">
+            <div class="max-w-6xl mx-auto px-4 w-full">
+                <h2 class="text-4xl font-display font-semibold text-center text-white mb-4 drop-shadow-md">
+                    <span class="lang-en">Guest Reviews</span>
+                    <span class="lang-zh hide">房客評價</span>
+                </h2>
+                <p class="text-center text-white/60 mb-12">
+                    <span class="lang-en">What our guests are saying</span>
+                    <span class="lang-zh hide">聽聽房客們怎麼說</span>
+                </p>
+
+                <!-- Reviews Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Review 1 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-white/90 italic mb-4">
+                            <span class="lang-en">"Absolutely stunning place! The view of the mountains was
+                                breathtaking. Perfect escape from the city. Highly recommend!"</span>
+                            <span class="lang-zh hide">"真的太美了！山景令人驚嘆。遠離城市的完美選擇。強烈推薦！"</span>
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white font-bold">
+                                S</div>
+                            <div>
+                                <p class="font-semibold text-white">Sarah M.</p>
+                                <p class="text-sm text-white/50">New York, USA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-white/90 italic mb-4">
+                            <span class="lang-en">"The hot springs nearby were amazing. The loft is cozy, clean and
+                                feels like home. We'll definitely come back!"</span>
+                            <span class="lang-zh hide">"附近的溫泉真是太棒了。閣樓舒適、乾淨，有家的感覺。我們一定會再來！"</span>
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center text-white font-bold">
+                                田</div>
+                            <div>
+                                <p class="font-semibold text-white">田中 健太</p>
+                                <p class="text-sm text-white/50">Tokyo, Japan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-yellow-400">★★★★☆</span>
+                        </div>
+                        <p class="text-white/90 italic mb-4">
+                            <span class="lang-en">"Great location, very quiet and peaceful. The host was super
+                                responsive. Would be perfect with a coffee machine!"</span>
+                            <span class="lang-zh hide">"地點很棒，非常安靜祥和。房東回覆很快。如果有咖啡機就更完美了！"</span>
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-white font-bold">
+                                M</div>
+                            <div>
+                                <p class="font-semibold text-white">Marco B.</p>
+                                <p class="text-sm text-white/50">Milan, Italy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-white/90 italic mb-4">
+                            <span class="lang-en">"We spent our honeymoon here and it was magical. The atmosphere, the
+                                nature, everything was perfect. Thank you!"</span>
+                            <span class="lang-zh hide">"我們在這裡度過蜜月，真的太夢幻了。氛圍、自然環境，一切都完美。謝謝！"</span>
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white font-bold">
+                                L</div>
+                            <div>
+                                <p class="font-semibold text-white">李明 & 王芳</p>
+                                <p class="text-sm text-white/50">Shanghai, China</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-white/90 italic mb-4">
+                            <span class="lang-en">"Such a unique experience! The design of the loft is beautiful and
+                                very instagrammable. Loved every moment."</span>
+                            <span class="lang-zh hide">"獨特的體驗！閣樓設計很漂亮，很適合拍照。每一刻都很喜歡。"</span>
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center text-white font-bold">
+                                J</div>
+                            <div>
+                                <p class="font-semibold text-white">Jessica K.</p>
+                                <p class="text-sm text-white/50">Seoul, Korea</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="text-white/90 italic mb-4">
+                            <span class="lang-en">"Best Airbnb I've ever stayed at. The Beitou area is incredible and
+                                this loft is the cherry on top. 10/10!"</span>
+                            <span class="lang-zh hide">"我住過最棒的Airbnb。北投地區太棒了，這個閣樓更是錦上添花。10分！"</span>
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white font-bold">
+                                D</div>
+                            <div>
+                                <p class="font-semibold text-white">David L.</p>
+                                <p class="text-sm text-white/50">Sydney, Australia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Leave a Review Form -->
+                <div class="mt-20 max-w-2xl mx-auto bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-display font-semibold text-white mb-2 text-center">
+                        <span class="lang-en">Share Your Experience</span>
+                        <span class="lang-zh hide">分享您的體驗</span>
+                    </h3>
+                    <p class="text-white/40 text-center mb-8 text-sm">
+                        <span class="lang-en">Your feedback helps us improve (no registration required)</span>
+                        <span class="lang-zh hide">您的回饋將幫助我們做得更好 (無需註冊)</span>
+                    </p>
+
+                    <form action="https://formspree.io/f/tu-id-aqui" method="POST" class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" name="name" required placeholder="Name / 姓名"
+                                class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition">
+                            <input type="email" name="email" required placeholder="Email / 電子郵件"
+                                class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition">
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white/10 border border-white/20 rounded-xl px-4 py-3">
+                            <span class="text-white/40 text-sm">
+                                <span class="lang-en">Rating</span>
+                                <span class="lang-zh hide">評分</span>
+                            </span>
+                            <select name="rating"
+                                class="bg-transparent text-yellow-400 focus:outline-none cursor-pointer">
+                                <option value="5">★★★★★</option>
+                                <option value="4">★★★★☆</option>
+                                <option value="3">★★★☆☆</option>
+                                <option value="2">★★☆☆☆</option>
+                                <option value="1">★☆☆☆☆</option>
+                            </select>
+                        </div>
+
+                        <textarea name="comment" required rows="4" placeholder="Your review... / 您的評價..."
+                            class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition"></textarea>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-primary text-white rounded-xl font-semibold hover:bg-opacity-90 transition shadow-lg shadow-primary/20">
+                            <span class="lang-en">Post Review</span>
+                            <span class="lang-zh hide">提交評價</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing & Terms Section -->
+        <section id="pricing"
+            class="min-h-screen py-20 flex items-center snap-start bg-black/40 backdrop-blur-md text-white">
+            <div class="max-w-6xl mx-auto px-4 w-full">
+                <h2 class="text-4xl font-display font-semibold text-center text-white mb-4 drop-shadow-md">
+                    <span class="lang-en">Pricing & Booking</span>
+                    <span class="lang-zh hide">租金與服務</span>
+                </h2>
+                <p class="text-center text-white/60 mb-12">
+                    <span class="lang-en">Simple, transparent rates for your artistic stay</span>
+                    <span class="lang-zh hide">透明的價格，享受您的藝術之旅</span>
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Rate Card -->
+                    <div
+                        class="bg-gradient-to-br from-primary/40 to-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">
+                                    <span class="lang-en">Monthly Rate</span>
+                                    <span class="lang-zh hide">月租價格</span>
+                                </h3>
+                                <p class="text-white/60">
+                                    <span class="lang-en">All-inclusive stay</span>
+                                    <span class="lang-zh hide">全包式住宿</span>
+                                </p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-3xl font-bold text-white">NT$38,800</span>
+                                <span class="block text-xs text-white/40 uppercase tracking-tighter">per month /
+                                    每月</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-2xl">✨</span>
+                                <div>
+                                    <span class="lang-en font-semibold block">Long-stay Discount</span>
+                                    <span class="lang-zh hide font-semibold block">長租優惠</span>
+                                    <span class="text-sm text-primary-foreground/70">
+                                        <span class="lang-en">20% off for stays over one month</span>
+                                        <span class="lang-zh hide">入住超過一個月享 8 折優惠</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <ul class="text-sm text-white/60 space-y-2 pl-4">
+                                <li class="flex items-center gap-2">✓ <span class="lang-en">Utilities
+                                        included</span><span class="lang-zh hide">包含水電費</span></li>
+                                <li class="flex items-center gap-2">✓ <span class="lang-en">High-speed Wi-Fi</span><span
+                                        class="lang-zh hide">高速無線網路</span></li>
+                                <li class="flex items-center gap-2">✓ <span class="lang-en">Cleaning service
+                                        available</span><span class="lang-zh hide">提供清潔服務</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div
+                        class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-6">
+                            <span class="lang-en">Payment Methods</span>
+                            <span class="lang-zh hide">付款方式</span>
+                        </h3>
+
+                        <div class="space-y-6">
+                            <!-- Transfer -->
+                            <div
+                                class="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl">🏦</span>
+                                    <div>
+                                        <p class="font-semibold">
+                                            <span class="lang-en">Bank Transfer</span>
+                                            <span class="lang-zh hide">銀行轉帳</span>
+                                        </p>
+                                        <p class="text-xs text-green-400">
+                                            <span class="lang-en">Free of charge</span>
+                                            <span class="lang-zh hide">免手續費</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">0% Fee</span>
+                            </div>
+
+                            <!-- Cards/Paypal -->
+                            <div
+                                class="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl">💳</span>
+                                    <div>
+                                        <p class="font-semibold">
+                                            <span class="lang-en">PayPal & Credit Card</span>
+                                            <span class="lang-zh hide">PayPal 與 信用卡</span>
+                                        </p>
+                                        <p class="text-xs text-white/40">
+                                            <span class="lang-en">Convenient online payment</span>
+                                            <span class="lang-zh hide">便捷的線上支付</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-white/10 text-white/60 px-2 py-1 rounded">3% Fee</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section -->
+        <section id="location"
+            class="min-h-screen py-20 flex items-center snap-start bg-black/60 backdrop-blur-sm text-white">
+            <div class="max-w-7xl mx-auto px-4 w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-4xl font-bold text-white border-l-4 border-primary pl-6 mb-4">
+                                <span class="lang-en">Plan Your Visit</span>
+                                <span class="lang-zh hide">計劃您的行程</span>
+                            </h2>
+                            <p class="text-xl text-white/80 leading-relaxed font-light">
+                                <span class="lang-en">Located in the heart of Xinbeitou, just a 5-minute walk from the
+                                    MRT. Nearby nature, hot springs, and history.</span>
+                                <span class="lang-zh hide">位於新北投中心地帶，距離捷運站僅5分鐘步行路程。環繞著自然、溫泉和歷史。</span>
+                            </p>
+                        </div>
+
+                        <!-- Info Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="text-xl block mb-1">🚄</span>
+                                <span class="lang-en font-semibold">5 min to MRT</span>
+                                <span class="lang-zh hide font-semibold">5分鐘到捷運</span>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <span class="text-xl block mb-1">♨️</span>
+                                <span class="lang-en font-semibold">Hot Springs</span>
+                                <span class="lang-zh hide font-semibold">溫泉區</span>
+                            </div>
+                        </div>
+
+                        <!-- Integrated Contact Info -->
+                        <address class="space-y-4 not-italic mt-8 pt-8 border-t border-white/10">
+                            <p class="text-sm uppercase tracking-widest text-white/40 mb-2 font-semibold font-sans">
+                                <span class="lang-en">Direct Contact</span>
+                                <span class="lang-zh hide">直接聯繫</span>
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="mailto:almaviva8@gmail.com"
+                                    class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-full transition border border-white/20">
+                                    <span aria-hidden="true">✉️</span>
+                                    <span class="text-sm">almaviva8@gmail.com</span>
+                                </a>
+                                <a href="tel:+886937865077"
+                                    class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-full transition border border-white/20">
+                                    <span aria-hidden="true">📞</span>
+                                    <span class="text-sm">+886 937 865 077</span>
+                                </a>
+                            </div>
+                        </address>
+                    </div>
+
+                    <!-- Map -->
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 hover:scale-[1.02] transition duration-500 aspect-square md:aspect-auto md:h-[500px]">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.8927!2d121.5024!3d25.1367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ae7c43b8f9e7%3A0x8c3b4e6e0c8e0f0a!2sXinbeitou%20Station!5e0!3m2!1sen!2stw!4v1704000000000!5m2!1sen!2stw"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="snap-start py-10 text-center text-white/50 bg-black/80">
+            <p>© 2025 Xinbeitou Artistic Loft</p>
+        </div>
+    </div>
+
+    <script>
+        // Language Toggle Logic
+        let currentLang = 'en';
+
+        function toggleLang() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const zhElements = document.querySelectorAll('.lang-zh');
+            const btnText = document.getElementById('lang-btn-text');
+
+            if (currentLang === 'en') {
+                // Switch to Chinese
+                enElements.forEach(el => el.classList.add('hide'));
+                zhElements.forEach(el => el.classList.remove('hide'));
+                btnText.textContent = 'English';
+                currentLang = 'zh';
+            } else {
+                // Switch to English
+                enElements.forEach(el => el.classList.remove('hide'));
+                zhElements.forEach(el => el.classList.add('hide'));
+                btnText.textContent = '中文';
+                currentLang = 'en';
+            }
+        }
+
+        // Attach event listener after DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            const langBtn = document.getElementById('langToggleBtn');
+            if (langBtn) {
+                langBtn.addEventListener('click', toggleLang);
+            }
+        });
+    </script>
+</body>
+
+</html>
