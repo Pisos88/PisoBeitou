@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beitou Artistic Loft | 北投藝術閣樓</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♨️</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,30 +133,35 @@
             <div class="relative group max-w-[90vw] mx-auto">
                 <!-- Carousel Container -->
                 <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 pb-8 px-48">
-
-                    <!-- Duplicate last 3 images at the start for infinite loop -->
-                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="end">
+                    <!-- CLONES: Last 3 images (for infinite loop left) -->
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-clone="last">
                         <div
                             class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
                             <img src="images/gallery/timeline_20201119_131438.jpg" alt="Park View"
                                 class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="end">
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-clone="last">
                         <div
                             class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
                             <img src="images/gallery/timeline_20201119_131440.jpg" alt="Area View"
                                 class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="end">
+
+                    <!-- REAL CONTENT START -->
+                    <!-- VIDEO TOUR - First element -->
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
                         <div
-                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
-                            <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40 bg-black/20">
+                            <video controls preload="metadata" class="w-full h-full object-cover"
+                                poster="images/gallery/IMG_9106.jpg">
+                                <source src="images/gallery/tmp_v4738546832935418247.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
 
-                    <!-- Original Photos -->
                     <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
                         <div
                             class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
@@ -379,24 +386,21 @@
                         </div>
                     </div>
 
-                    <!-- Duplicate first 3 images at the end for infinite loop -->
-                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="start">
+                    <!-- CLONES: Video + 1st Image (for infinite loop right) -->
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-clone="first">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40 bg-black/20">
+                            <video controls preload="metadata" class="w-full h-full object-cover"
+                                poster="images/gallery/IMG_9106.jpg">
+                                <source src="images/gallery/tmp_v4738546832935418247.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-clone="first">
                         <div
                             class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
                             <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="start">
-                        <div
-                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
-                            <img src="images/gallery/IMG_9107.jpg" alt="Interior" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="start">
-                        <div
-                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
-                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18.jpeg" alt="Loft View"
-                                class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -410,6 +414,32 @@
                     class="absolute right-10 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/20 transition-all opacity-0 group-hover:opacity-100 hidden md:flex">
                     <span class="text-2xl">→</span>
                 </button>
+            </div>
+
+            <!-- Gallery Progress Indicator -->
+            <div class="flex items-center justify-center gap-4 mt-8 max-w-md mx-auto">
+                <!-- Back to Video Button -->
+                <button onclick="scrollToVideo()"
+                    class="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white/60 hover:text-white hover:bg-white/20 transition-all text-sm flex items-center gap-2"
+                    title="Back to Video Tour">
+                    <span>🎥</span>
+                    <span class="lang-en">Video</span>
+                    <span class="lang-zh hide">影片</span>
+                </button>
+
+                <!-- Progress Info -->
+                <div class="flex-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 px-4 py-2">
+                    <div class="flex items-center justify-between mb-1 text-xs text-white/60">
+                        <span id="currentSlide">1</span>
+                        <span>/</span>
+                        <span id="totalSlides">32</span>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-white/10 rounded-full h-1 overflow-hidden">
+                        <div id="progressBar" class="bg-white/60 h-full rounded-full transition-all duration-300"
+                            style="width: 3%;"></div>
+                    </div>
+                </div>
             </div>
 
             <p class="text-center text-white/30 text-sm mt-8 animate-pulse md:hidden">
@@ -848,46 +878,76 @@
             }
         });
 
-        // Infinite Circular Carousel Logic
+        // Simple Carousel
+        // Infinite Carousel Logic with Clones
         const carousel = document.getElementById('carousel');
-        const duplicateCount = 3; // Number of duplicated images on each end
+        const TOTAL_REAL_ITEMS = 32;
+        const CLONES_START = 2; // Last 2 clones at start (timeline images)
+        const CLONES_END = 2;   // Video + 1st img clone at end
 
-        // Center carousel on load (start at first real image)
-        window.addEventListener('load', function () {
-            const firstRealImage = carousel.children[duplicateCount];
-            firstRealImage.scrollIntoView({ block: 'nearest', inline: 'center' });
+        // Helper: Get item width
+        const getItemWidth = () => {
+            const item = carousel.querySelector('.snap-center');
+            return item ? item.offsetWidth + 24 : 0; // width + gap
+        };
+
+        // Update progress display (ignoring clones)
+        function updateProgressDisplay(realIndex) {
+            document.getElementById('currentSlide').textContent = realIndex;
+            const percent = ((realIndex - 1) / (TOTAL_REAL_ITEMS - 1)) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+
+        // Scroll to REAL Video (First item after start clones)
+        function scrollToVideo() {
+            const width = getItemWidth();
+            carousel.scrollTo({ left: CLONES_START * width, behavior: 'smooth' });
+        }
+
+        // Initialize Carousel
+        window.addEventListener('load', () => {
+            const width = getItemWidth();
+            // Jump instantly to first REAL element (Video) skipping start clones
+            carousel.scrollTo({ left: CLONES_START * width, behavior: 'instant' });
+            updateProgressDisplay(1);
         });
 
-        // Detect when scrolling reaches duplicates and jump to real position
+        // Infinite Scroll Handler
         let isScrolling;
-        carousel.addEventListener('scroll', function () {
+        carousel.addEventListener('scroll', () => {
             clearTimeout(isScrolling);
-            isScrolling = setTimeout(function () {
-                const scrollPos = carousel.scrollLeft;
-                const itemWidth = carousel.children[0].offsetWidth + 24; // width + gap
-                const currentIndex = Math.round(scrollPos / itemWidth);
-                const totalItems = carousel.children.length;
-                const realItemCount = totalItems - (duplicateCount * 2);
 
-                // If scrolled to duplicate at start, jump to real end
-                if (currentIndex < duplicateCount) {
-                    const targetIndex = realItemCount + currentIndex;
-                    carousel.scrollTo({ left: targetIndex * itemWidth, behavior: 'instant' });
+            const width = getItemWidth();
+            if (!width) return;
+
+            const scrollPos = carousel.scrollLeft;
+            const currentIndexRaw = Math.round(scrollPos / width);
+
+            // Calculate Real Index for UI
+            let realIndex = currentIndexRaw - CLONES_START + 1;
+            if (realIndex < 1) realIndex = TOTAL_REAL_ITEMS + realIndex;
+            if (realIndex > TOTAL_REAL_ITEMS) realIndex = realIndex - TOTAL_REAL_ITEMS;
+            updateProgressDisplay(realIndex);
+
+            // Infinite Loop Jump Logic
+            isScrolling = setTimeout(() => {
+                // If reached start clones (scrolled left from video) -> Jump to End
+                if (currentIndexRaw < 1) {
+                    const jumpIndex = TOTAL_REAL_ITEMS + currentIndexRaw;
+                    carousel.scrollTo({ left: jumpIndex * width, behavior: 'instant' });
                 }
-                // If scrolled to duplicate at end, jump to real start
-                else if (currentIndex >= duplicateCount + realItemCount) {
-                    const targetIndex = currentIndex - realItemCount;
-                    carousel.scrollTo({ left: targetIndex * itemWidth, behavior: 'instant' });
+                // If reached end clones (scrolled right past last img) -> Jump to Start
+                else if (currentIndexRaw >= TOTAL_REAL_ITEMS + CLONES_START) {
+                    const jumpIndex = currentIndexRaw - TOTAL_REAL_ITEMS;
+                    carousel.scrollTo({ left: jumpIndex * width, behavior: 'instant' });
                 }
             }, 100);
         });
 
+        // Navigation Buttons
         function scrollCarousel(direction) {
-            const itemWidth = carousel.children[0].offsetWidth + 24;
-            carousel.scrollBy({
-                left: direction * itemWidth,
-                behavior: 'smooth'
-            });
+            const width = getItemWidth();
+            carousel.scrollBy({ left: direction * width, behavior: 'smooth' });
         }
     </script>
 </body>
