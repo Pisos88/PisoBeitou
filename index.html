@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xinbeitou Artistic Loft | 新北投藝術閣樓</title>
+    <title>Beitou Artistic Loft | 北投藝術閣樓</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +52,16 @@
         .animate-ken-burns {
             animation: ken-burns 30s ease-in-out infinite alternate;
         }
+
+        /* Carousel Hide Scrollbar */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
@@ -73,7 +83,7 @@
                 <div class="flex justify-between items-center h-16">
                     <div class="flex items-center space-x-2">
                         <span class="text-2xl">♨️</span>
-                        <span class="text-xl font-display font-semibold tracking-wide text-white">Xinbeitou Loft</span>
+                        <span class="text-xl font-display font-semibold tracking-wide text-white">Beitou Loft</span>
                     </div>
                     <button type="button" id="langToggleBtn"
                         class="px-3 py-1 border border-white/20 rounded-full text-sm hover:bg-white/10 transition cursor-pointer">
@@ -84,64 +94,328 @@
         </nav>
 
         <!-- Hero Section -->
-        <header class="min-h-screen flex items-center justify-center text-center px-4 snap-start">
-            <div class="max-w-4xl mx-auto text-white drop-shadow-lg">
+        <header
+            class="min-h-screen flex items-center justify-center text-center px-4 snap-start relative overflow-hidden">
+            <div class="max-w-4xl mx-auto text-white drop-shadow-lg z-10">
                 <h1 class="text-5xl md:text-7xl font-display font-semibold mb-6 tracking-wide">
-                    <span class="lang-en">Xinbeitou Artistic Loft | <span
+                    <span class="lang-en">Beitou Artistic Loft | <span
                             class="text-3xl md:text-4xl block mt-2 opacity-90">Hot Spring Escape in Taipei</span></span>
-                    <span class="lang-zh hide">新北投藝術閣樓 | <span
+                    <span class="lang-zh hide">北投藝術閣樓 | <span
                             class="text-3xl md:text-4xl block mt-2 opacity-90">台北溫泉區奢華住宿</span></span>
                 </h1>
-                <p class="text-xl md:text-3xl font-light mb-10 text-white/90">
-                    <span class="lang-en">Escape to tranquility in Taiwan's most famous hot spring district</span>
-                    <span class="lang-zh hide">在台灣最著名的溫泉區享受寧靜時光</span>
-                </p>
+
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
                     <a href="#gallery"
                         class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full hover:bg-white/20 transition">
-                        <span class="lang-en">View Photos</span>
-                        <span class="lang-zh hide">查看照片</span>
+                        <span class="lang-en">Explore the Space</span>
+                        <span class="lang-zh hide">探索空間</span>
                     </a>
                 </div>
             </div>
         </header>
 
         <!-- Gallery Section -->
-        <section id="gallery" class="min-h-screen py-20 flex items-center snap-start bg-black/30 backdrop-blur-sm">
-            <div class="max-w-7xl mx-auto px-4 w-full">
-                <h2 class="text-4xl font-bold text-center text-white mb-12 drop-shadow-md">
-                    <span class="lang-en">The Space</span>
-                    <span class="lang-zh hide">探索空間</span>
+        <section id="gallery"
+            class="min-h-screen py-20 flex flex-col justify-center snap-start bg-black/40 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 w-full mb-12">
+                <h2 class="text-4xl font-display font-semibold text-center text-white drop-shadow-md">
+                    <span class="lang-en">The Artistic Space</span>
+                    <span class="lang-zh hide">探索藝術空間</span>
                 </h2>
+                <p class="text-center text-white/50 mt-4">
+                    <span class="lang-en">A curated gallery of our loft and surroundings</span>
+                    <span class="lang-zh hide">閣樓與周邊環境的精選照片</span>
+                </p>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div
-                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
-                        <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
+            <div class="relative group max-w-[90vw] mx-auto">
+                <!-- Carousel Container -->
+                <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 pb-8 px-48">
+
+                    <!-- Duplicate last 3 images at the start for infinite loop -->
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="end">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131438.jpg" alt="Park View"
+                                class="w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div
-                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
-                        <img src="images/gallery/IMG_9107.jpg" alt="Interior" class="w-full h-full object-cover">
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="end">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131440.jpg" alt="Area View"
+                                class="w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div
-                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
-                        <img src="images/gallery/IMG_9108.jpg" alt="Detail" class="w-full h-full object-cover">
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="end">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div
-                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
-                        <img src="images/gallery/IMG_9110.jpg" alt="Sofa" class="w-full h-full object-cover">
+
+                    <!-- Original Photos -->
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div
-                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
-                        <img src="images/gallery/IMG_9111.jpg" alt="Kitchen" class="w-full h-full object-cover">
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9107.jpg" alt="Interior" class="w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div
-                        class="aspect-video rounded-xl overflow-hidden shadow-2xl transition transform hover:scale-105 duration-500 border-2 border-white/20">
-                        <img src="images/gallery/timeline_20201119_131429.jpg" alt="View"
-                            class="w-full h-full object-cover">
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18.jpeg" alt="Loft View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (1).jpeg" alt="Loft View 2"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (2).jpeg"
+                                alt="Kitchen Detail" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (3).jpeg" alt="Bathroom"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (4).jpeg" alt="Bedroom"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (5).jpeg" alt="Living Area"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (6).jpeg" alt="Art Detail"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (7).jpeg" alt="View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (8).jpeg" alt="Window"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (9).jpeg" alt="Mosaic"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (10).jpeg" alt="Details"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (11).jpeg" alt="Entrance"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18 (12).jpeg" alt="Floor"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9108.jpg" alt="Detail" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9110.jpg" alt="Sofa Area" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9111.jpg" alt="Kitchen" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9112.jpg" alt="Workspace" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9113.jpg" alt="Artistic Touch"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9114.jpg" alt="Bedroom" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9116.jpg" alt="Window View" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131420.jpg" alt="Balcony"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131423.jpg" alt="Exterior View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131427.jpg" alt="Greenery"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131429.jpg" alt="Sunset View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131436.jpg" alt="Sky View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131425.jpg" alt="Mountain View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131431.jpg" alt="Exterior"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131432.jpg" alt="Nature"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131434.jpg" alt="Landscape"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131438.jpg" alt="Park View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/timeline_20201119_131440.jpg" alt="Area View"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Duplicate first 3 images at the end for infinite loop -->
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="start">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9106.jpg" alt="Living Room" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="start">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/IMG_9107.jpg" alt="Interior" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex-none w-[70vw] md:w-[50vw] snap-center" data-duplicate="start">
+                        <div
+                            class="aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transition duration-500 hover:border-white/40">
+                            <img src="images/gallery/WhatsApp Image 2025-12-01 at 05.51.18.jpeg" alt="Loft View"
+                                class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="scrollCarousel(-1)"
+                    class="absolute left-10 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/20 transition-all opacity-0 group-hover:opacity-100 hidden md:flex">
+                    <span class="text-2xl">←</span>
+                </button>
+                <button onclick="scrollCarousel(1)"
+                    class="absolute right-10 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/20 transition-all opacity-0 group-hover:opacity-100 hidden md:flex">
+                    <span class="text-2xl">→</span>
+                </button>
             </div>
+
+            <p class="text-center text-white/30 text-sm mt-8 animate-pulse md:hidden">
+                <span class="lang-en">Swipe to explore →</span>
+                <span class="lang-zh hide">向左滑動探索 →</span>
+            </p>
         </section>
 
         <!-- Reviews / Testimonials -->
@@ -365,18 +639,38 @@
                                     <span class="lang-zh hide">月租價格</span>
                                 </h3>
                                 <p class="text-white/60">
-                                    <span class="lang-en">All-inclusive stay</span>
-                                    <span class="lang-zh hide">全包式住宿</span>
+                                    <span class="lang-en font-semibold text-primary-foreground">Completely Equipped
+                                        Stay</span>
+                                    <span class="lang-zh hide font-semibold text-primary-foreground">配備齊全的住宿</span>
                                 </p>
                             </div>
                             <div class="text-right">
-                                <span class="text-3xl font-bold text-white">NT$38,800</span>
+                                <span class="text-3xl font-bold text-white">NT$28,800</span>
                                 <span class="block text-xs text-white/40 uppercase tracking-tighter">per month /
                                     每月</span>
                             </div>
                         </div>
 
                         <div class="space-y-4">
+                            <!-- New Detailed Features List -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-6">
+                                <div class="bg-white/5 p-3 rounded-xl">
+                                    <span class="block text-primary-foreground font-semibold">🏔️ Panoramic Views</span>
+                                    <span class="text-white/50 text-xs">Mountains & Historic Arch.</span>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded-xl">
+                                    <span class="block text-primary-foreground font-semibold">🎨 Artistic Mosaic</span>
+                                    <span class="text-white/50 text-xs">Hand-crafted tile designs</span>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded-xl">
+                                    <span class="block text-primary-foreground font-semibold">🏠 Smart Loft</span>
+                                    <span class="text-white/50 text-xs">Maximized living space</span>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded-xl">
+                                    <span class="block text-primary-foreground font-semibold">🧺 Fully Equipped</span>
+                                    <span class="text-white/50 text-xs">Washer, Microwave, AC</span>
+                                </div>
+                            </div>
                             <div class="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
                                 <span class="text-2xl">✨</span>
                                 <div>
@@ -463,9 +757,9 @@
                                 <span class="lang-zh hide">計劃您的行程</span>
                             </h2>
                             <p class="text-xl text-white/80 leading-relaxed font-light">
-                                <span class="lang-en">Located in the heart of Xinbeitou, just a 5-minute walk from the
-                                    MRT. Nearby nature, hot springs, and history.</span>
-                                <span class="lang-zh hide">位於新北投中心地帶，距離捷運站僅5分鐘步行路程。環繞著自然、溫泉和歷史。</span>
+                                <span class="lang-en">Located in Taipei, Beitou, just a 3-minute walk from the MRT (Red
+                                    Line). Surrounded by the public library, thermal parks, and museums.</span>
+                                <span class="lang-zh hide">位於台北北投，步行至捷運站（紅線）僅需3分鐘。環繞著北投圖書館、溫泉公園和博物館。</span>
                             </p>
                         </div>
 
@@ -473,13 +767,13 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base">
                             <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                 <span class="text-xl block mb-1">🚄</span>
-                                <span class="lang-en font-semibold">5 min to MRT</span>
-                                <span class="lang-zh hide font-semibold">5分鐘到捷運</span>
+                                <span class="lang-en font-semibold">3 min to Beitou MRT</span>
+                                <span class="lang-zh hide font-semibold">3分鐘至北投捷運站</span>
                             </div>
                             <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                                <span class="text-xl block mb-1">♨️</span>
-                                <span class="lang-en font-semibold">Hot Springs</span>
-                                <span class="lang-zh hide font-semibold">溫泉區</span>
+                                <span class="text-xl block mb-1">📚</span>
+                                <span class="lang-en font-semibold">Library & Parks</span>
+                                <span class="lang-zh hide font-semibold">圖書館與公園</span>
                             </div>
                         </div>
 
@@ -553,6 +847,48 @@
                 langBtn.addEventListener('click', toggleLang);
             }
         });
+
+        // Infinite Circular Carousel Logic
+        const carousel = document.getElementById('carousel');
+        const duplicateCount = 3; // Number of duplicated images on each end
+
+        // Center carousel on load (start at first real image)
+        window.addEventListener('load', function () {
+            const firstRealImage = carousel.children[duplicateCount];
+            firstRealImage.scrollIntoView({ block: 'nearest', inline: 'center' });
+        });
+
+        // Detect when scrolling reaches duplicates and jump to real position
+        let isScrolling;
+        carousel.addEventListener('scroll', function () {
+            clearTimeout(isScrolling);
+            isScrolling = setTimeout(function () {
+                const scrollPos = carousel.scrollLeft;
+                const itemWidth = carousel.children[0].offsetWidth + 24; // width + gap
+                const currentIndex = Math.round(scrollPos / itemWidth);
+                const totalItems = carousel.children.length;
+                const realItemCount = totalItems - (duplicateCount * 2);
+
+                // If scrolled to duplicate at start, jump to real end
+                if (currentIndex < duplicateCount) {
+                    const targetIndex = realItemCount + currentIndex;
+                    carousel.scrollTo({ left: targetIndex * itemWidth, behavior: 'instant' });
+                }
+                // If scrolled to duplicate at end, jump to real start
+                else if (currentIndex >= duplicateCount + realItemCount) {
+                    const targetIndex = currentIndex - realItemCount;
+                    carousel.scrollTo({ left: targetIndex * itemWidth, behavior: 'instant' });
+                }
+            }, 100);
+        });
+
+        function scrollCarousel(direction) {
+            const itemWidth = carousel.children[0].offsetWidth + 24;
+            carousel.scrollBy({
+                left: direction * itemWidth,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 
